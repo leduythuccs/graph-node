@@ -109,7 +109,9 @@ impl BlockIngestor {
             None => {
                 info!(
                     self.logger,
-                    "Downloading latest blocks from Ethereum, this may take a few minutes..."
+                    "Downloading latest blocks [{}->{}] from Ethereum, this may take a few minutes...",
+                    {head_block_ptr.number},
+                    {latest_block.number}
                 );
             }
             Some(head_block_ptr) => {
